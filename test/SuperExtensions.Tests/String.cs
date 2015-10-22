@@ -7,33 +7,21 @@ namespace SuperExtensions.Tests
         [Theory]
         [InlineData(null)]
         [InlineData("")]
-        public void IsNullOrEmptyTest(string value)
-        {
-            Assert.True(value.IsNullOrEmpty());
-        }
+        public void IsNullOrEmptyTest(string value) => Assert.True(value.IsNullOrEmpty());
 
         [Theory]
         [InlineData("value")]
-        public void NotIsNullOrEmptyTest(string value)
-        {
-            Assert.False(value.IsNullOrEmpty());
-        }
+        public void NotIsNullOrEmptyTest(string value) => Assert.False(value.IsNullOrEmpty());
 
         [Theory]
         [InlineData(null)]
         [InlineData("")]
         [InlineData(" ")]
         [InlineData("   ")]
-        public void IsNullOrWhiteSpaceTest(string value)
-        {
-            Assert.True(value.IsNullOrWhiteSpace());
-        }
+        public void IsNullOrWhiteSpaceTest(string value) => Assert.True(value.IsNullOrWhiteSpace());
 
         [Theory]
         [InlineData("value")]
-        public void NotIsNullOrWhiteSpaceTest(string value)
-        {
-            Assert.False(value.IsNullOrWhiteSpace());
-        }
+        public void NotIsNullOrWhiteSpaceTest(string value) => Assert.False(value.IsNullOrWhiteSpace());
     }
 }

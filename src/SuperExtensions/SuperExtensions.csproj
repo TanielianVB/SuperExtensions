@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GenericICollection.cs" />
     <Compile Include="GenericType.cs" />
     <Compile Include="LambdaExpression.cs" />
     <Compile Include="Properties\SuperAssemblyInfo.cs" />
