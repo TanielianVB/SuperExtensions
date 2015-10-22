@@ -64,6 +64,7 @@
       <Link>Properties\SuperAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="GenericType.cs" />
+    <Compile Include="String.cs" />
     <Compile Include="Type.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
