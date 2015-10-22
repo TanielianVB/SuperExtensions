@@ -43,6 +43,7 @@
     <Compile Include="GenericType.cs" />
     <Compile Include="LambdaExpression.cs" />
     <Compile Include="Properties\SuperAssemblyInfo.cs" />
+    <Compile Include="GenericIEnumerable.cs" />
     <Compile Include="String.cs" />
     <Compile Include="Type.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
