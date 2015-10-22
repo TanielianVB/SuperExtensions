@@ -60,6 +60,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\src\SuperExtensions\Properties\SuperAssemblyInfo.cs">
+      <Link>Properties\SuperAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="GenericType.cs" />
     <Compile Include="Type.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="GenericType.cs" />
     <Compile Include="LambdaExpression.cs" />
+    <Compile Include="Properties\SuperAssemblyInfo.cs" />
     <Compile Include="Type.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
