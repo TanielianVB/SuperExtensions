@@ -1,17 +1,16 @@
-﻿using Xunit;
+﻿using System;
+using Xunit;
 
 namespace SuperExtensions.Tests
 {
     public class TypeExtensionsTest
     {
-        [Fact]
-        public void GetDefaultValueTest()
+        [Theory]
+        [InlineData(typeof(int), 0)]
+        [InlineData(typeof(string), null)]
+        public void GetDefaultValueTest(Type type, object defaultValue)
         {
-            var typeInt = typeof(int);
-            Assert.Equal(typeInt.GetDefaultValue(), 0);
-
-            var typeString = typeof(string);
-            Assert.Equal(typeString.GetDefaultValue(), null);
+            Assert.Equal(type.GetDefaultValue(), defaultValue);
         }
     }
 }
