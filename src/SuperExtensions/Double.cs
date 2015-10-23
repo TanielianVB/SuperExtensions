@@ -1,0 +1,14 @@
+﻿using System;
+using System.Globalization;
+using System.Threading;
+
+namespace SuperExtensions
+{
+    public static class DoubleExtensions
+    {
+        public static double Pow(this double x, double y) => Math.Pow(x, y);
+        public static string ToCurrency(this double value) => (string.Format(Thread.CurrentThread.CurrentCulture, "{0:C}", value));
+        public static string ToCurrency(this double value, string cultureName) => (string.Format(new CultureInfo(cultureName), "{0:C}", value));
+        public static int ToInt(this double value) => Convert.ToInt32(value);
+    }
+}

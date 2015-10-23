@@ -40,11 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Decimal.cs" />
     <Compile Include="GenericICollection.cs" />
     <Compile Include="GenericType.cs" />
+    <Compile Include="Int.cs" />
     <Compile Include="LambdaExpression.cs" />
     <Compile Include="Properties\SuperAssemblyInfo.cs" />
     <Compile Include="GenericIEnumerable.cs" />
+    <Compile Include="Double.cs" />
     <Compile Include="String.cs" />
     <Compile Include="Type.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
