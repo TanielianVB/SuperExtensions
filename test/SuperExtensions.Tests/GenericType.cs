@@ -8,12 +8,12 @@ namespace SuperExtensions.Tests
         [Theory]
         [InlineData(1, new[] { 0, 1, 2, 3, 4, 5 })]
         [InlineData("1", new[] { "0", "1", "2", "3", "4", "5" })]
-        public void IsInTest<T>(T item, T[] items) => Assert.True(item.IsIn(items));
+        public void IsInTest<T>(T item, T[] items) => Assert.True(item.IsAny(items));
 
         [Theory]
         [InlineData(100, new[] { 0, 1, 2, 3, 4, 5 })]
         [InlineData("100", new[] { "0", "1", "2", "3", "4", "5" })]
-        public void NotIsInTest<T>(T item, T[] items) => Assert.False(item.IsIn(items));
+        public void NotIsInTest<T>(T item, T[] items) => Assert.False(item.IsAny(items));
 
         [Theory]
         [InlineData(1, 0, 2)]

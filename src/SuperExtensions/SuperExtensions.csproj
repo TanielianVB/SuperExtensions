@@ -43,6 +43,7 @@
     <Compile Include="Decimal.cs" />
     <Compile Include="GenericICollection.cs" />
     <Compile Include="GenericType.cs" />
+    <Compile Include="IConvertible.cs" />
     <Compile Include="Int.cs" />
     <Compile Include="LambdaExpression.cs" />
     <Compile Include="Properties\SuperAssemblyInfo.cs" />

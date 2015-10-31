@@ -16,7 +16,5 @@ namespace SuperExtensions
         public static TimeSpan Minutes(this double minutes) => TimeSpan.FromMinutes(minutes);
         public static TimeSpan Hours(this double hours) => TimeSpan.FromHours(hours);
         public static TimeSpan Days(this double days) => TimeSpan.FromDays(days);
-
-        public static int ToInt(this double value) => Convert.ToInt32(value);
     }
 }
