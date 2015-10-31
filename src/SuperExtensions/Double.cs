@@ -7,6 +7,7 @@ namespace SuperExtensions
     public static class DoubleExtensions
     {
         public static double Pow(this double x, double y) => Math.Pow(x, y);
+        public static double PercentageOf(this double part, double total) => (part * 100) / total;
 
         public static string ToCurrency(this double value) => (string.Format(Thread.CurrentThread.CurrentCulture, "{0:C}", value));
         public static string ToCurrency(this double value, string cultureName) => (string.Format(new CultureInfo(cultureName), "{0:C}", value));

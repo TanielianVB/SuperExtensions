@@ -6,6 +6,7 @@ namespace SuperExtensions
     public static class IntExtensions
     {
         public static int Pow(this int x, int y) => Math.Pow(x, y).ChangeType<int>();
+        public static int PercentageOf(this int part, int total) => (part * 100) / total;
 
         public static int K(this int value) => value * 1000;
         public static int M(this int value) => value * 1000.Pow(2);
