@@ -46,6 +46,10 @@
     <Compile Include="IConvertible.cs" />
     <Compile Include="Int.cs" />
     <Compile Include="LambdaExpression.cs" />
+    <Compile Include="Assembly.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="MemberInfo.cs" />
+    <Compile Include="ParameterInfo.cs" />
     <Compile Include="Properties\SuperAssemblyInfo.cs" />
     <Compile Include="GenericIEnumerable.cs" />
     <Compile Include="Double.cs" />
