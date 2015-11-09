@@ -18,6 +18,31 @@ namespace SuperExtensions
                 return (T)serializer.Deserialize(reader);
             }
         }
+
+        //string
+        public static bool IsNullOrEmpty(this string value) => string.IsNullOrEmpty(value);
+        public static bool IsNullOrWhiteSpace(this string value) => string.IsNullOrWhiteSpace(value);
+
+        //Regex
+        public static bool IsMatch(this string input, string pattern) => Regex.IsMatch(input, pattern);
+        public static bool IsMatch(this string input, string pattern, RegexOptions options) => Regex.IsMatch(input, pattern, options);
+        public static bool IsMatch(this string input, string pattern, RegexOptions options, TimeSpan matchTimeout) => Regex.IsMatch(input, pattern, options, matchTimeout);
+        public static Match Match(this string input, string pattern) => Regex.Match(input, pattern);
+        public static Match Match(this string input, string pattern, RegexOptions options) => Regex.Match(input, pattern, options);
+        public static Match Match(this string input, string pattern, RegexOptions options, TimeSpan matchTimeout) => Regex.Match(input, pattern, options, matchTimeout);
+        public static MatchCollection Matches(this string input, string pattern) => Regex.Matches(input, pattern);
+        public static MatchCollection Matches(this string input, string pattern, RegexOptions options) => Regex.Matches(input, pattern, options);
+        public static MatchCollection Matches(this string input, string pattern, RegexOptions options, TimeSpan matchTimeout) => Regex.Matches(input, pattern, options, matchTimeout);
+        public static string Replace(this string input, string pattern, MatchEvaluator evaluator) => Regex.Replace(input, pattern, evaluator);
+        public static string Replace(this string input, string pattern, string replacement) => Regex.Replace(input, pattern, replacement);
+        public static string Replace(this string input, string pattern, MatchEvaluator evaluator, RegexOptions options) => Regex.Replace(input, pattern, evaluator, options);
+        public static string Replace(this string input, string pattern, string replacement, RegexOptions options) => Regex.Replace(input, pattern, replacement, options);
+        public static string Replace(this string input, string pattern, MatchEvaluator evaluator, RegexOptions options, TimeSpan matchTimeout) => Regex.Replace(input, pattern, evaluator, options, matchTimeout);
+        public static string Replace(this string input, string pattern, string replacement, RegexOptions options, TimeSpan matchTimeout) => Regex.Replace(input, pattern, replacement, options, matchTimeout);
+        public static string[] Split(this string input, string pattern) => Regex.Split(input, pattern);
+        public static string[] Split(this string input, string pattern, RegexOptions options) => Regex.Split(input, pattern, options);
+        public static string[] Split(this string input, string pattern, RegexOptions options, TimeSpan matchTimeout) => Regex.Split(input, pattern, options, matchTimeout);
+
         public static bool IsLike(this string input, string wildcardPattern)
         {
             if (input == null || wildcardPattern.IsNullOrEmpty()) return false;
@@ -38,10 +63,5 @@ namespace SuperExtensions
             }
             return result;
         }
-        public static bool IsMatch(this string input, string pattern) => Regex.IsMatch(input, pattern);
-        public static MatchCollection Matches(this string input, string pattern) => Regex.Matches(input, pattern);
-        public static MatchCollection Matches(this string input, string pattern, RegexOptions options) => Regex.Matches(input, pattern, options);
-        public static bool IsNullOrEmpty(this string value) => string.IsNullOrEmpty(value);
-        public static bool IsNullOrWhiteSpace(this string value) => string.IsNullOrWhiteSpace(value);
     }
 }

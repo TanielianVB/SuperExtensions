@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Decimal.cs" />
     <Compile Include="GenericICollection.cs" />
+    <Compile Include="GenericIDictionary.cs" />
     <Compile Include="GenericType.cs" />
     <Compile Include="IConvertible.cs" />
     <Compile Include="Int.cs" />
