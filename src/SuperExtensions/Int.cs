@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SuperExtensions
 {
@@ -36,10 +37,6 @@ namespace SuperExtensions
         public static TimeSpan Hours(this int hours) => TimeSpan.FromHours(hours);
         public static TimeSpan Days(this int days) => TimeSpan.FromDays(days);
 
-        public static IEnumerable<int> Range(this int n)
-        {
-            for (int i = 0; i < n; i++)
-                yield return i;
-        }
+        public static IEnumerable<int> Range(this int start, int count) => Enumerable.Range(start, count);
     }
 }
