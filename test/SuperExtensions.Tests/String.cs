@@ -23,5 +23,15 @@ namespace SuperExtensions.Tests
         [Theory]
         [InlineData("value")]
         public void NotIsNullOrWhiteSpaceTest(string value) => Assert.False(value.IsNullOrWhiteSpace());
+
+        [Theory]
+        [InlineData("Teste.js", "*.js")]
+        [InlineData("Teste.js", "*.*")]
+        [InlineData("Teste.cs", "Teste.*")]
+        public void IsLikeTest(string input, string wildcardPattern) => Assert.True(input.IsLike(wildcardPattern));
+
+        [Theory]
+        [InlineData("Teste.cs", ".js*")]
+        public void NotIsLikeTest(string input, string wildcardPattern) => Assert.False(input.IsLike(wildcardPattern));
     }
 }
