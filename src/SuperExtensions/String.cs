@@ -43,11 +43,76 @@ namespace SuperExtensions
         public static bool IsNullOrWhiteSpace(this string value) => string.IsNullOrWhiteSpace(value);
 
         //Regex
+
+        /// <summary>
+        /// Indicates whether the specified regular expression finds a match in the specified input string.
+        /// </summary>
+        /// <param name="input">The string to search for a match.</param>
+        /// <param name="pattern">The regular expression pattern to match.</param>
+        /// <returns>true if the regular expression finds a match; otherwise, false.</returns>
+        /// <exception cref="System.ArgumentException">A regular expression parsing error occurred.</exception>
+        /// <exception cref="System.ArgumentNullException">input or pattern is null.</exception>
+        /// <exception cref="System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section.</exception>
         public static bool IsMatch(this string input, string pattern) => Regex.IsMatch(input, pattern);
+        /// <summary>
+        /// Indicates whether the specified regular expression finds a match in the specified input string, using the specified matching options.
+        /// </summary>
+        /// <param name="input">The string to search for a match.</param>
+        /// <param name="pattern">The regular expression pattern to match.</param>
+        /// <param name="options">A bitwise combination of the enumeration values that provide options for matching.</param>
+        /// <returns>true if the regular expression finds a match; otherwise, false.</returns>
+        /// <exception cref="System.ArgumentException">A regular expression parsing error occurred.</exception>
+        /// <exception cref="System.ArgumentNullException">input or pattern is null.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">options is not a valid System.Text.RegularExpressions.RegexOptions value.</exception>
+        /// <exception cref="System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section.</exception>
         public static bool IsMatch(this string input, string pattern, RegexOptions options) => Regex.IsMatch(input, pattern, options);
+        /// <summary>
+        /// Indicates whether the specified regular expression finds a match in the specified input string, using the specified matching options and time-out interval.
+        /// </summary>
+        /// <param name="input">The string to search for a match.</param>
+        /// <param name="pattern">The regular expression pattern to match.</param>
+        /// <param name="options">A bitwise combination of the enumeration values that provide options for matching.</param>
+        /// <param name="matchTimeout">A time-out interval, or System.Text.RegularExpressions.Regex.InfiniteMatchTimeout to indicate that the method should not time out.</param>
+        /// <returns>true if the regular expression finds a match; otherwise, false.</returns>
+        /// <exception cref="System.ArgumentException">A regular expression parsing error occurred.</exception>
+        /// <exception cref="System.ArgumentNullException">input or pattern is null.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">options is not a valid System.Text.RegularExpressions.RegexOptions value.-or-matchTimeout is negative, zero, or greater than approximately 24 days.</exception>
+        /// <exception cref="System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section.</exception>
         public static bool IsMatch(this string input, string pattern, RegexOptions options, TimeSpan matchTimeout) => Regex.IsMatch(input, pattern, options, matchTimeout);
+        /// <summary>
+        /// Searches the specified input string for the first occurrence of the specified regular expression.
+        /// </summary>
+        /// <param name="input">The string to search for a match.</param>
+        /// <param name="pattern">The regular expression pattern to match.</param>
+        /// <returns>An object that contains information about the match.</returns>
+        /// <exception cref="System.ArgumentException">A regular expression parsing error occurred.</exception>
+        /// <exception cref="System.ArgumentNullException">input or pattern is null.</exception>
+        /// <exception cref="System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section.</exception>
         public static Match Match(this string input, string pattern) => Regex.Match(input, pattern);
+        /// <summary>
+        /// Searches the input string for the first occurrence of the specified regular expression, using the specified matching options.
+        /// </summary>
+        /// <param name="input">The string to search for a match.</param>
+        /// <param name="pattern">The regular expression pattern to match.</param>
+        /// <param name="options">A bitwise combination of the enumeration values that provide options for matching.</param>
+        /// <returns>An object that contains information about the match.</returns>
+        /// <exception cref="System.ArgumentException">A regular expression parsing error occurred.</exception>
+        /// <exception cref="System.ArgumentNullException">input or pattern is null.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">options is not a valid bitwise combination of System.Text.RegularExpressions.RegexOptions values.</exception>
+        /// <exception cref="System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section.</exception>
         public static Match Match(this string input, string pattern, RegexOptions options) => Regex.Match(input, pattern, options);
+        /// <summary>
+        /// Searches the input string for the first occurrence of the specified regular expression, using the specified matching options and time-out interval.
+        /// </summary>
+        /// <param name="input">The string to search for a match.</param>
+        /// <param name="pattern">The regular expression pattern to match.</param>
+        /// <param name="options">A bitwise combination of the enumeration values that provide options for matching.</param>
+        /// <param name="matchTimeout">A time-out interval, or System.Text.RegularExpressions.Regex.InfiniteMatchTimeout to indicate that the method should not time out.</param>
+        /// <returns>An object that contains information about the match.</returns>
+        /// <exception cref="System.ArgumentException">A regular expression parsing error occurred.</exception>
+        /// <exception cref="System.ArgumentNullException">input or pattern is null.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">options is not a valid bitwise combination of System.Text.RegularExpressions.RegexOptions values.-or-matchTimeout is negative, zero, or greater than approximately 24 days.</exception>
+        /// <exception cref="System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section.</exception>
         public static Match Match(this string input, string pattern, RegexOptions options, TimeSpan matchTimeout) => Regex.Match(input, pattern, options, matchTimeout);
         public static MatchCollection Matches(this string input, string pattern) => Regex.Matches(input, pattern);
         public static MatchCollection Matches(this string input, string pattern, RegexOptions options) => Regex.Matches(input, pattern, options);
