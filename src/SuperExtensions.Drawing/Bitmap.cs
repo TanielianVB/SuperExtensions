@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace SuperExtensions.Drawing
+namespace SuperExtensions
 {
     public static class BitmapExtensions
     {

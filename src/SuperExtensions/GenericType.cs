@@ -1,7 +1,5 @@
 ﻿using System;
-using System.IO;
 using System.Linq;
-using System.Xml.Serialization;
 
 namespace SuperExtensions
 {
@@ -14,18 +12,6 @@ namespace SuperExtensions
         public static void ThrowIfArgumentIsNull<T>(this T argument, string argumentName) where T : class
         {
             if (argument == null) throw new ArgumentNullException(argumentName + " not allowed to be null");
-        }
-
-        public static string ToXml<T>(this T obj) where T : class, new()
-        {
-            obj.ThrowIfArgumentIsNull(nameof(obj));
-
-            var serializer = new XmlSerializer(typeof(T));
-            using (var writer = new StringWriter())
-            {
-                serializer.Serialize(writer, obj);
-                return writer.ToString();
-            }
         }
     }
 }

@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperExtensions", "src\SuperExtensions\SuperExtensions.csproj", "{16A190F1-8738-47F5-AED0-CFECF80096E4}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{710A157D-439A-4907-99AC-B4D0B13FD118}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{D392446D-7CB0-478B-84A5-0F7F66541156}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperExtensions", "src\SuperExtensions\SuperExtensions.csproj", "{16A190F1-8738-47F5-AED0-CFECF80096E4}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperExtensions.Tests", "test\SuperExtensions.Tests\SuperExtensions.Tests.csproj", "{4F79CB6B-4982-467C-B735-A0EDDB0E9446}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperExtensions.Drawing", "src\SuperExtensions.Drawing\SuperExtensions.Drawing.csproj", "{4B7DFE28-85D3-47B2-B87B-680129A32F04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperExtensions.Xml", "src\SuperExtensions.Xml\SuperExtensions.Xml.csproj", "{8C0DB88A-B52F-4926-87F0-FD561A981E3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,10 @@ Global
 		{4B7DFE28-85D3-47B2-B87B-680129A32F04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B7DFE28-85D3-47B2-B87B-680129A32F04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B7DFE28-85D3-47B2-B87B-680129A32F04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C0DB88A-B52F-4926-87F0-FD561A981E3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C0DB88A-B52F-4926-87F0-FD561A981E3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C0DB88A-B52F-4926-87F0-FD561A981E3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C0DB88A-B52F-4926-87F0-FD561A981E3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,5 +45,6 @@ Global
 		{16A190F1-8738-47F5-AED0-CFECF80096E4} = {710A157D-439A-4907-99AC-B4D0B13FD118}
 		{4F79CB6B-4982-467C-B735-A0EDDB0E9446} = {D392446D-7CB0-478B-84A5-0F7F66541156}
 		{4B7DFE28-85D3-47B2-B87B-680129A32F04} = {710A157D-439A-4907-99AC-B4D0B13FD118}
+		{8C0DB88A-B52F-4926-87F0-FD561A981E3D} = {710A157D-439A-4907-99AC-B4D0B13FD118}
 	EndGlobalSection
 EndGlobal
