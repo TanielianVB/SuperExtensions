@@ -1,0 +1,14 @@
+version: 0.0.2.{build}-{branch}
+
+configuration: Release
+platform: Any CPU
+
+before_build:
+  - nuget restore
+
+cache:
+  - packages -> **\packages.config
+
+test:
+  assemblies:
+    - '**\*.Tests.dll'
