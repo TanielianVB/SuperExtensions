@@ -101,17 +101,148 @@ namespace SuperExtensions
         /// <exception cref="System.ArgumentOutOfRangeException">options is not a valid bitwise combination of System.Text.RegularExpressions.RegexOptions values.-or-matchTimeout is negative, zero, or greater than approximately 24 days.</exception>
         /// <exception cref="System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section.</exception>
         public static Match Match(this string input, string pattern, RegexOptions options, TimeSpan matchTimeout) => Regex.Match(input, pattern, options, matchTimeout);
+        /// <summary>
+        /// Searches the specified input string for all occurrences of a specified regular expression.
+        /// </summary>
+        /// <param name="input">The string to search for a match.</param>
+        /// <param name="pattern">The regular expression pattern to match.</param>
+        /// <returns>A collection of the System.Text.RegularExpressions.Match objects found by the search. If no matches are found, the method returns an empty collection object.</returns>
+        /// <exception cref="System.ArgumentException">A regular expression parsing error occurred.</exception>
+        /// <exception cref="System.ArgumentNullException">input or pattern is null.</exception>
         public static MatchCollection Matches(this string input, string pattern) => Regex.Matches(input, pattern);
+        /// <summary>
+        /// Searches the specified input string for all occurrences of a specified regular expression, using the specified matching options.
+        /// </summary>
+        /// <param name="input">The string to search for a match.</param>
+        /// <param name="pattern">The regular expression pattern to match.</param>
+        /// <param name="options">A bitwise combination of the enumeration values that specify options for matching.</param>
+        /// <returns>A collection of the System.Text.RegularExpressions.Match objects found by the search. If no matches are found, the method returns an empty collection object.</returns>
+        /// <exception cref="System.ArgumentException">A regular expression parsing error occurred.</exception>
+        /// <exception cref="System.ArgumentNullException">input or pattern is null.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">options is not a valid bitwise combination of System.Text.RegularExpressions.RegexOptions values.</exception>
         public static MatchCollection Matches(this string input, string pattern, RegexOptions options) => Regex.Matches(input, pattern, options);
+        /// <summary>
+        /// Searches the specified input string for all occurrences of a specified regular expression, using the specified matching options and time-out interval.
+        /// </summary>
+        /// <param name="input">The string to search for a match.</param>
+        /// <param name="pattern">The regular expression pattern to match.</param>
+        /// <param name="options">A bitwise combination of the enumeration values that specify options for matching.</param>
+        /// <param name="matchTimeout">A time-out interval, or System.Text.RegularExpressions.Regex.InfiniteMatchTimeout to indicate that the method should not time out.</param>
+        /// <returns>A collection of the System.Text.RegularExpressions.Match objects found by the search. If no matches are found, the method returns an empty collection object.</returns>
+        /// <exception cref="System.ArgumentException">A regular expression parsing error occurred.</exception>
+        /// <exception cref="System.ArgumentNullException">input or pattern is null.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">options is not a valid bitwise combination of System.Text.RegularExpressions.RegexOptions values.-or-matchTimeout is negative, zero, or greater than approximately 24 days.</exception>
         public static MatchCollection Matches(this string input, string pattern, RegexOptions options, TimeSpan matchTimeout) => Regex.Matches(input, pattern, options, matchTimeout);
-        public static string Replace(this string input, string pattern, MatchEvaluator evaluator) => Regex.Replace(input, pattern, evaluator);
-        public static string Replace(this string input, string pattern, string replacement) => Regex.Replace(input, pattern, replacement);
-        public static string Replace(this string input, string pattern, MatchEvaluator evaluator, RegexOptions options) => Regex.Replace(input, pattern, evaluator, options);
-        public static string Replace(this string input, string pattern, string replacement, RegexOptions options) => Regex.Replace(input, pattern, replacement, options);
-        public static string Replace(this string input, string pattern, MatchEvaluator evaluator, RegexOptions options, TimeSpan matchTimeout) => Regex.Replace(input, pattern, evaluator, options, matchTimeout);
-        public static string Replace(this string input, string pattern, string replacement, RegexOptions options, TimeSpan matchTimeout) => Regex.Replace(input, pattern, replacement, options, matchTimeout);
+        /// <summary>
+        /// In a specified input string, replaces all strings that match a specified regular expression with a string returned by a System.Text.RegularExpressions.MatchEvaluator delegate.
+        /// </summary>
+        /// <param name="input">The string to search for a match.</param>
+        /// <param name="pattern">The regular expression pattern to match.</param>
+        /// <param name="evaluator">A custom method that examines each match and returns either the original matched string or a replacement string.</param>
+        /// <returns>A new string that is identical to the input string, except that a replacement string takes the place of each matched string. If pattern is not matched in the current instance, the method returns the current instance unchanged.</returns>
+        /// <exception cref="System.ArgumentException">A regular expression parsing error occurred.</exception>
+        /// <exception cref="System.ArgumentNullException">input, pattern, or evaluator is null.</exception>
+        /// <exception cref="System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section.</exception>
+        public static string ReplacePattern(this string input, string pattern, MatchEvaluator evaluator) => Regex.Replace(input, pattern, evaluator);
+        /// <summary>
+        /// In a specified input string, replaces all strings that match a specified regular expression with a specified replacement string.
+        /// </summary>
+        /// <param name="input">The string to search for a match.</param>
+        /// <param name="pattern">The regular expression pattern to match.</param>
+        /// <param name="replacement">The replacement string.</param>
+        /// <returns>A new string that is identical to the input string, except that the replacement string takes the place of each matched string. If pattern is not matched in the current instance, the method returns the current instance unchanged.</returns>
+        /// <exception cref="System.ArgumentException">A regular expression parsing error occurred.</exception>
+        /// <exception cref="System.ArgumentNullException">input, pattern, or replacement is null.</exception>
+        /// <exception cref="System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section.</exception>
+        public static string ReplacePattern(this string input, string pattern, string replacement) => Regex.Replace(input, pattern, replacement);
+        /// <summary>
+        /// In a specified input string, replaces all strings that match a specified regular expression with a string returned by a System.Text.RegularExpressions.MatchEvaluator delegate. Specified options modify the matching operation.
+        /// </summary>
+        /// <param name="input">The string to search for a match.</param>
+        /// <param name="pattern">The regular expression pattern to match.</param>
+        /// <param name="evaluator">A custom method that examines each match and returns either the original matched string or a replacement string.</param>
+        /// <param name="options">A bitwise combination of the enumeration values that provide options for matching.</param>
+        /// <returns>A new string that is identical to the input string, except that a replacement string takes the place of each matched string. If pattern is not matched in the current instance, the method returns the current instance unchanged.</returns>
+        /// <exception cref="System.ArgumentException">A regular expression parsing error occurred.</exception>
+        /// <exception cref="System.ArgumentNullException">input, pattern, or evaluator is null.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">options is not a valid bitwise combination of System.Text.RegularExpressions.RegexOptions values.</exception>
+        /// <exception cref="System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section. </exception>
+        public static string ReplacePattern(this string input, string pattern, MatchEvaluator evaluator, RegexOptions options) => Regex.Replace(input, pattern, evaluator, options);
+        /// <summary>
+        /// In a specified input string, replaces all strings that match a specified regular expression with a specified replacement string. Specified options modify the matching operation.
+        /// </summary>
+        /// <param name="input">The string to search for a match.</param>
+        /// <param name="pattern">The regular expression pattern to match.</param>
+        /// <param name="replacement">The replacement string.</param>
+        /// <param name="options">A bitwise combination of the enumeration values that provide options for matching.</param>
+        /// <returns>A new string that is identical to the input string, except that the replacement string takes the place of each matched string. If pattern is not matched in the current instance, the method returns the current instance unchanged.</returns>
+        /// <exception cref="System.ArgumentException">A regular expression parsing error occurred.</exception>
+        /// <exception cref="System.ArgumentNullException">input, pattern, or replacement is null.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">options is not a valid bitwise combination of System.Text.RegularExpressions.RegexOptions values.</exception>
+        /// <exception cref="System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section. </exception>
+        public static string ReplacePattern(this string input, string pattern, string replacement, RegexOptions options) => Regex.Replace(input, pattern, replacement, options);
+        /// <summary>
+        /// In a specified input string, replaces all substrings that match a specified regular expression with a string returned by a System.Text.RegularExpressions.MatchEvaluator delegate. Additional parameters specify options that modify the matching operation and a time-out interval if no match is found.
+        /// </summary>
+        /// <param name="input">The string to search for a match.</param>
+        /// <param name="pattern">The regular expression pattern to match.</param>
+        /// <param name="evaluator">A custom method that examines each match and returns either the original matched string or a replacement string.</param>
+        /// <param name="options">A bitwise combination of enumeration values that provide options for matching.</param>
+        /// <param name="matchTimeout">A time-out interval, or System.Text.RegularExpressions.Regex.InfiniteMatchTimeout to indicate that the method should not time out.</param>
+        /// <returns>A new string that is identical to the input string, except that the replacement string takes the place of each matched string. If pattern is not matched in the current instance, the method returns the current instance unchanged.</returns>
+        /// <exception cref="System.ArgumentException">A regular expression parsing error occurred.</exception>
+        /// <exception cref="System.ArgumentNullException">input, pattern, or evaluator is null.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">options is not a valid bitwise combination of System.Text.RegularExpressions.RegexOptions values.-or-matchTimeout is negative, zero, or greater than approximately 24 days.</exception>
+        /// <exception cref="System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section. </exception>
+        public static string ReplacePattern(this string input, string pattern, MatchEvaluator evaluator, RegexOptions options, TimeSpan matchTimeout) => Regex.Replace(input, pattern, evaluator, options, matchTimeout);
+        /// <summary>
+        /// In a specified input string, replaces all strings that match a specified regular expression with a specified replacement string. Additional parameters specify options that modify the matching operation and a time-out interval if no match is found.
+        /// </summary>
+        /// <param name="input">The string to search for a match.</param>
+        /// <param name="pattern">The regular expression pattern to match.</param>
+        /// <param name="replacement">The replacement string.</param>
+        /// <param name="options">A bitwise combination of the enumeration values that provide options for matching.</param>
+        /// <param name="matchTimeout">A time-out interval, or System.Text.RegularExpressions.Regex.InfiniteMatchTimeout to indicate that the method should not time out.</param>
+        /// <returns>A new string that is identical to the input string, except that the replacement string takes the place of each matched string. If pattern is not matched in the current instance, the method returns the current instance unchanged.</returns>
+        /// <exception cref="System.ArgumentException">A regular expression parsing error occurred.</exception>
+        /// <exception cref="System.ArgumentNullException">input, pattern, or replacement is null.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">options is not a valid bitwise combination of System.Text.RegularExpressions.RegexOptions values.-or-matchTimeout is negative, zero, or greater than approximately 24 days.</exception>
+        /// <exception cref="System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section. </exception>
+        public static string ReplacePattern(this string input, string pattern, string replacement, RegexOptions options, TimeSpan matchTimeout) => Regex.Replace(input, pattern, replacement, options, matchTimeout);
+        /// <summary>
+        /// Splits an input string into an array of substrings at the positions defined by a regular expression pattern.
+        /// </summary>
+        /// <param name="input">The string to split.</param>
+        /// <param name="pattern">The regular expression pattern to match.</param>
+        /// <returns>An array of strings.</returns>
+        /// <exception cref="System.ArgumentException">A regular expression parsing error occurred.</exception>
+        /// <exception cref="System.ArgumentNullException">input or pattern is null.</exception>
+        /// <exception cref="System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section. </exception>
         public static string[] Split(this string input, string pattern) => Regex.Split(input, pattern);
+        /// <summary>
+        /// Splits an input string into an array of substrings at the positions defined by a specified regular expression pattern. Specified options modify the matching operation.
+        /// </summary>
+        /// <param name="input">The string to split.</param>
+        /// <param name="pattern">The regular expression pattern to match.</param>
+        /// <param name="options">A bitwise combination of the enumeration values that provide options for matching.</param>
+        /// <returns>An array of strings.</returns>
+        /// <exception cref="System.ArgumentException">A regular expression parsing error occurred.</exception>
+        /// <exception cref="System.ArgumentNullException">input or pattern is null.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">options is not a valid bitwise combination of System.Text.RegularExpressions.RegexOptions values.</exception>
+        /// <exception cref="System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section. </exception>
         public static string[] Split(this string input, string pattern, RegexOptions options) => Regex.Split(input, pattern, options);
+        /// <summary>
+        /// Splits an input string into an array of substrings at the positions defined by a specified regular expression pattern. Additional parameters specify options that modify the matching operation and a time-out interval if no match is found.
+        /// </summary>
+        /// <param name="input">The string to split.</param>
+        /// <param name="pattern">The regular expression pattern to match.</param>
+        /// <param name="options">A bitwise combination of the enumeration values that provide options for matching.</param>
+        /// <param name="matchTimeout">A time-out interval, or System.Text.RegularExpressions.Regex.InfiniteMatchTimeout to indicate that the method should not time out.</param>
+        /// <returns>A string array.</returns>
+        /// <exception cref="System.ArgumentException">A regular expression parsing error occurred.</exception>
+        /// <exception cref="System.ArgumentNullException">input or pattern is null.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">options is not a valid bitwise combination of System.Text.RegularExpressions.RegexOptions values.-or-matchTimeout is negative, zero, or greater than approximately 24 days.</exception>
+        /// <exception cref="System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section. </exception>
         public static string[] Split(this string input, string pattern, RegexOptions options, TimeSpan matchTimeout) => Regex.Split(input, pattern, options, matchTimeout);
 
         public static bool IsLike(this string input, string wildcardPattern)
@@ -132,6 +263,7 @@ namespace SuperExtensions
             {
                 throw new ArgumentException($"Invalid pattern: {wildcardPattern}", ex);
             }
+
             return result;
         }
     }
