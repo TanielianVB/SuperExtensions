@@ -5,6 +5,11 @@ namespace SuperExtensions
 {
     public static class BitmapExtensions
     {
+        /// <summary>
+        /// Creates a gray scale Bitmap representation.
+        /// </summary>
+        /// <param name="bitmap">Bitmap in which the new Bitmap will be based.</param>
+        /// <returns>Gray scale Bitmap representation of the parameter.</returns>
         public static Bitmap ToGrayScale(this Bitmap bitmap)
         {
             var newBitmap = new Bitmap(bitmap.Width, bitmap.Height);
