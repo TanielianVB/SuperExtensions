@@ -11,7 +11,7 @@ namespace SuperExtensions
 
         public static void ThrowIfArgumentIsNull<T>(this T argument, string argumentName) where T : class
         {
-            if (argument == null) throw new ArgumentNullException(argumentName + " not allowed to be null");
+            if (argument == null) throw new ArgumentNullException(argumentName + " is not allowed to be null");
         }
     }
 }

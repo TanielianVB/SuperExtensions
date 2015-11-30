@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Xml.Serialization;
 
 namespace SuperExtensions
@@ -7,7 +8,7 @@ namespace SuperExtensions
     {
         public static T FromXml<T>(this string xml) where T : class, new()
         {
-            xml.ThrowIfArgumentIsNull(nameof(xml));
+            if (xml == null) throw new ArgumentNullException(nameof(xml) + " is not allowed to be null");
 
             var serializer = new XmlSerializer(typeof(T));
             using (var reader = new StringReader(xml))

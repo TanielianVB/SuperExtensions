@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Xml.Serialization;
 
 namespace SuperExtensions
@@ -7,7 +8,7 @@ namespace SuperExtensions
     {
         public static string ToXml<T>(this T obj) where T : class, new()
         {
-            obj.ThrowIfArgumentIsNull(nameof(obj));
+            if (obj == null) throw new ArgumentNullException(nameof(obj) + " is not allowed to be null");
 
             var serializer = new XmlSerializer(typeof(T));
             using (var writer = new StringWriter())
