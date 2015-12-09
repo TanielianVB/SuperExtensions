@@ -5,7 +5,7 @@ namespace SuperExtensions
 {
     public static class StringExtensions
     {
-        //string
+        #region  string
 
         /// <summary>
         /// Replaces one or more format items in a specified string with the string representation of a specified object.
@@ -29,7 +29,9 @@ namespace SuperExtensions
         /// <returns>true if the value parameter is null or System.String.Empty, or if value consists exclusively of white-space characters.</returns>
         public static bool IsNullOrWhiteSpace(this string value) => string.IsNullOrWhiteSpace(value);
 
-        //Regex
+        #endregion
+
+        #region Regex
 
         /// <summary>
         /// Indicates whether the specified regular expression finds a match in the specified input string.
@@ -266,5 +268,7 @@ namespace SuperExtensions
 
             return result;
         }
+
+        #endregion
     }
 }

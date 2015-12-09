@@ -5,8 +5,11 @@ namespace SuperExtensions
 {
     public static class ParameterInfoExtensions
     {
-        //Attribute
+        #region Attribute
+
         public static bool IsDefined<T>(ParameterInfo element) where T : Attribute => Attribute.IsDefined(element, typeof(T));
         public static bool IsDefined<T>(ParameterInfo element, bool inherit) where T : Attribute => Attribute.IsDefined(element, typeof(T), inherit);
+
+        #endregion
     }
 }

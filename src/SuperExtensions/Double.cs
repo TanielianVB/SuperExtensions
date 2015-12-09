@@ -6,6 +6,8 @@ namespace SuperExtensions
 {
     public static class DoubleExtensions
     {
+        #region Math
+
         /// <summary>
         /// Returns a specified number raised to the specified power.
         /// </summary>
@@ -18,7 +20,9 @@ namespace SuperExtensions
         public static string ToCurrency(this double value) => (string.Format(Thread.CurrentThread.CurrentCulture, "{0:C}", value));
         public static string ToCurrency(this double value, string cultureName) => (string.Format(new CultureInfo(cultureName), "{0:C}", value));
 
-        //TimeSpan
+        #endregion
+
+        #region TimeSpan
 
         /// <summary>
         /// Returns a System.TimeSpan that represents a specified number of milliseconds.
@@ -60,5 +64,7 @@ namespace SuperExtensions
         /// <exception cref="System.OverflowException">value is less than System.TimeSpan.MinValue or greater than System.TimeSpan.MaxValue. -or-value is System.Double.PositiveInfinity.-or-value is System.Double.NegativeInfinity.</exception>
         /// <exception cref="System.ArgumentException">value is equal to System.Double.NaN.</exception>
         public static TimeSpan Days(this double value) => TimeSpan.FromDays(value);
+
+        #endregion 
     }
 }

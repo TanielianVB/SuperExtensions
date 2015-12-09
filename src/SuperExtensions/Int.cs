@@ -6,6 +6,8 @@ namespace SuperExtensions
 {
     public static class IntExtensions
     {
+        #region Math
+
         public static int Pow(this int x, int y) => Math.Pow(x, y).ChangeType<int>();
         public static int PercentageOf(this int part, int total) => (part * 100) / total;
 
@@ -17,7 +19,9 @@ namespace SuperExtensions
         public static int KiB(this int value) => value * 1024;
         public static int MiB(this int value) => value * 1024.Pow(2);
 
-        //DateTime
+        #endregion
+
+        #region DateTime
 
         /// <summary>
         /// Initializes a new instance of the System.DateTime structure to the specified year, month 1, and day.
@@ -104,7 +108,9 @@ namespace SuperExtensions
         /// <exception cref="System.ArgumentOutOfRangeException">year is less than 1 or greater than 9999.-or- day is less than 1 or greater than the number of days in month.</exception>
         public static DateTime December(this int day, int year) => new DateTime(year, 12, day);
 
-        //TimeSpan
+        #endregion
+
+        #region TimeSpan
 
         /// <summary>
         /// Returns a System.TimeSpan that represents a specified time, where the specification is in units of ticks.
@@ -153,7 +159,9 @@ namespace SuperExtensions
         /// <exception cref="System.ArgumentException">value is equal to System.Double.NaN.</exception>
         public static TimeSpan Days(this int value) => TimeSpan.FromDays(value);
 
-        //Enumerable
+        #endregion
+
+        #region Enumerable
 
         /// <summary>
         /// Generates a sequence of integral numbers within a specified range.
@@ -163,5 +171,7 @@ namespace SuperExtensions
         /// <returns>An IEnumerable&lt;Int32&gt; in C# or IEnumerable(Of Int32) in Visual Basic that contains a range of sequential integral numbers.</returns>
         /// <exception cref="System.ArgumentOutOfRangeException">count is less than 0.-or-start + count -1 is larger than System.Int32.MaxValue.</exception>
         public static IEnumerable<int> Range(this int start, int count) => Enumerable.Range(start, count);
+
+        #endregion
     }
 }
