@@ -9,6 +9,11 @@ To install [Super Extensions](https://www.nuget.org/packages/SuperExtensions/), 
 ```PowerShell
 PM> Install-Package SuperExtensions
 ```
+## SuperExtensions.Json [![NuGet](https://img.shields.io/nuget/v/SuperExtensions.Json.svg)](https://www.nuget.org/packages/SuperExtensions.Json/) [![NuGet](https://img.shields.io/nuget/dt/SuperExtensions.Json.svg)](https://www.nuget.org/packages/SuperExtensions.Json/)
+To install [Super Extensions Json](https://www.nuget.org/packages/SuperExtensions.Json/), run the following command in the [Package Manager Console](http://docs.nuget.org/consume/package-manager-console)
+```PowerShell
+PM> Install-Package SuperExtensions.Json
+```
 ## SuperExtensions.Xml [![NuGet](https://img.shields.io/nuget/v/SuperExtensions.Xml.svg)](https://www.nuget.org/packages/SuperExtensions.Xml/) [![NuGet](https://img.shields.io/nuget/dt/SuperExtensions.Xml.svg)](https://www.nuget.org/packages/SuperExtensions.Xml/)
 To install [Super Extensions Xml](https://www.nuget.org/packages/SuperExtensions.Xml/), run the following command in the [Package Manager Console](http://docs.nuget.org/consume/package-manager-console)
 ```PowerShell
