@@ -10,7 +10,7 @@ namespace SuperExtensions
         /// <typeparam name="T">The type of the object that this json string represents.</typeparam>
         /// <param name="json">Json string.</param>
         /// <returns>Object contained in the Json string.</returns>
-        public static T FromJson<T>(this string json) where T : class, new()
+        public static T FromJson<T>(this string json)
         {
             return JsonConvert.DeserializeObject<T>(json);
         }

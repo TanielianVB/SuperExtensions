@@ -10,7 +10,7 @@ namespace SuperExtensions
         /// <typeparam name="T">The type of the object that will be serialized.</typeparam>
         /// <param name="obj">Object that will be serialized.</param>
         /// <returns>Json representation of the object contained in a string.</returns>
-        public static string ToJson<T>(this T obj) where T : class, new()
+        public static string ToJson<T>(this T obj)
         {
             return JsonConvert.SerializeObject(obj);
         }
