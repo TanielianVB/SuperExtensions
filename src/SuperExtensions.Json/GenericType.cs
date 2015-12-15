@@ -1,11 +1,15 @@
 ﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Bson;
 
 namespace SuperExtensions
 {
     public static class GenericTypeExtensions
     {
+        #region Json
+
         /// <summary>
         /// Serializes the specified object to a JSON string.
         /// </summary>
@@ -102,5 +106,30 @@ namespace SuperExtensions
         /// <returns>A task that represents the asynchronous serialize operation. The value of the TResult parameter contains a JSON string representation of the object.</returns>
         [Obsolete("ToJsonAsync is obsolete. Use the Task.Factory.StartNew method to serialize JSON asynchronously: Task.Factory.StartNew(() => value.ToJson(formatting, settings))")]
         public static Task<string> ToJsonAsync<T>(this T value, Formatting formatting, JsonSerializerSettings settings) => JsonConvert.SerializeObjectAsync(value, formatting, settings);
+
+        #endregion
+
+        #region Bson
+
+        /// <summary>
+        /// Serializes the specified object to a Binary JSON string.
+        /// </summary>
+        /// <typeparam name="T">The type of the object that will be serialized.</typeparam>
+        /// <param name="value">The object to serialize.</param>
+        /// <returns>A Binary JSON string representation of the object.</returns>
+        public static byte[] ToBson<T>(this T value)
+        {
+            using (var ms = new MemoryStream())
+            {
+                using (BsonWriter writer = new BsonWriter(ms))
+                {
+                    new JsonSerializer().Serialize(writer, value);
+                }
+
+                return ms.ToArray();
+            }
+        }
+
+        #endregion
     }
 }

@@ -31,6 +31,12 @@ namespace SuperExtensions
 
         #endregion
 
+        #region Convert
+
+        public static byte[] FromBase64String(this string s) => Convert.FromBase64String(s);
+
+        #endregion
+
         #region Regex
 
         /// <summary>

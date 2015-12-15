@@ -1,11 +1,15 @@
 ﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Bson;
 
 namespace SuperExtensions
 {
     public static class StringExtensions
     {
+        #region Json
+
         /// <summary>
         /// Deserializes the JSON to a .NET object.
         /// </summary>
@@ -98,5 +102,30 @@ namespace SuperExtensions
         /// <returns>A task that represents the asynchronous deserialize operation. The value of the TResult parameter contains the deserialized object from the JSON string.</returns>
         [Obsolete("FromJsonAsync is obsolete. Use the Task.Factory.StartNew method to deserialize JSON asynchronously: Task.Factory.StartNew(() => value.FromJsonAsync<T>(settings))")]
         public static Task<T> FromJsonAsync<T>(this string value, JsonSerializerSettings settings) => JsonConvert.DeserializeObjectAsync<T>(value, settings);
+
+        #endregion
+
+        #region Bson
+
+        /// <summary>
+        /// Deserializes the Binary JSON to the specified .NET type.
+        /// </summary>
+        /// <typeparam name="T">The type of the object to deserialize to.</typeparam>
+        /// <param name="value">The Binary JSON to deserialize.</param>
+        /// <param name="readRootValueAsArray">A value indicating whether the root object will be read as a Binary JSON array.</param>
+        /// <returns>The deserialized object from the Binary JSON string.</returns>
+        public static T FromBson<T>(this byte[] value, bool readRootValueAsArray = false)
+        {
+            using (var ms = new MemoryStream(value))
+            {
+                using (var reader = new BsonReader(ms))
+                {
+                    reader.ReadRootValueAsArray = readRootValueAsArray;
+                    return new JsonSerializer().Deserialize<T>(reader);
+                }
+            }
+        }
+
+        #endregion
     }
 }
